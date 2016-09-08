@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/modernizr-2.8.3.min.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to the Great Number Game</h1>
+            <p>
+                I am think of a number between 1 and 100
+            </p>
+            <p>
+                Take a guess!
+            </p>
+
+            <form action="/guess" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="guess" id="guess">
+                </div>
+                <button type="submit" class="btn btn-primary">Guess!</button>
+            </form>
+            <p>
+                <form action="/reset" method="POST">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">Reset</button>
+                    </div>
+                </form>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+
+            </div>
+            <div class="col-sm-6">
+                <h1 class="{{session['message'][0]}}">{{session['message'][1]}}</h1>
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.11.2.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>
